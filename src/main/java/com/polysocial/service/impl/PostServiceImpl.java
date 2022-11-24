@@ -68,7 +68,7 @@ public class PostServiceImpl implements PostService {
     public ListPostDTO findAllPage(Integer page, Integer limit) {
         ListPostDTO listPostDTO = new ListPostDTO();
         Pageable pageable = PageRequest.of(page, limit);
-        Page<Posts> pagePost = this.postRepository.findAllDESC(pageable);
+        Page<Posts> pagePost = this.postRepository.findAll(pageable);
         List<Posts> listPost = pagePost.getContent();
 
         if (listPost.size() > 0) {
